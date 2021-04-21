@@ -5,16 +5,27 @@
                 <mat-label>Resultado</mat-label>
                 <input matInput [(ngModel)]="result" disabled [ngModelOptions]="{standalone: true}">
             </mat-form-field>
-            <mat-form-field class="form-input-expressao">
-                <mat-label>Coloque aqui a expressão desejada</mat-label>
-                <input matInput [(ngModel)]="valueCalc" [ngModelOptions]="{standalone: true}">
+            <h4>Expressão:</h4>
+            <mat-list role="list" class="form-expression-preview">
+              <mat-list-item role="listitem" *ngFor="let item of valuesCalc">{{ item }}</mat-list-item>
+            </mat-list>
+            <mat-form-field class="form-input-expression">
+              <mat-label>Operacação: (Coloque o sinal da operação)</mat-label>
+              <input matInput [(ngModel)]="signal" [ngModelOptions]="{standalone: true}" [ngClass]="{'invalid': !signalTextValid}" placeholder="+, -, /, *, %" (keypress)="signalTextValid = true">
+            </mat-form-field>
+            <mat-form-field class="form-input-expression">
+              <mat-label>Valor 1</mat-label>
+              <input matInput [(ngModel)]="valueCalc1" [ngModelOptions]="{standalone: true}" [ngClass]="{'invalid': !valueCalc1Valid}" placeholder="000001" (keypress)="valueCalc1Valid = true">
+            </mat-form-field>
+            <mat-form-field class="form-input-expression">
+              <mat-label>Valor 2</mat-label>
+              <input matInput [(ngModel)]="valueCalc2" [ngModelOptions]="{standalone: true}" [ngClass]="{'invalid': !valueCalc2Valid}"  placeholder="000011" (keypress)="valueCalc2Valid = true">
             </mat-form-field>
         </mat-card-content>
-        <mat-card-actions>
-            <button mat-button>{{ 'calcular' | uppercase}}</button>
+        <mat-divider></mat-divider>
+        <mat-card-actions class="form-calculator-actions">
+          <button mat-raised-button color="primary" (click)="calculate()">{{ 'calcular' | uppercase}}</button>
+          <button mat-raised-button color="warn" (click)="cancel()">{{ 'cancelar' | uppercase}}</button>
         </mat-card-actions>
     </form>
 </mat-card>
-<div>
-  <button mat-button>Ver resultado inteiro</button>
-</div>

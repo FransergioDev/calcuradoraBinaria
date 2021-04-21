@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import {MatListModule} from '@angular/material/list';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 import { AppComponent } from './app.component';
@@ -36,7 +38,9 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
     MatCardModule,
     MatGridListModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
