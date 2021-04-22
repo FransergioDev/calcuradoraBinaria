@@ -133,5 +133,4 @@ export class CalculadoraBinariaComponent {
       return (result.length === 0);
     }
   }
-
 }
