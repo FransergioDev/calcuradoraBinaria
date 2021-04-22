@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CalculadoraBinariaService } from 'src/app/core/services/calculadora-binaria.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +6,7 @@ import { CalculadoraBinariaService } from 'src/app/core/services/calculadora-bin
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public title: string = CalculadoraBinariaService.titleValue;
+  public title: string = 'Calculadora Binária';
   constructor() { }
 
   ngOnInit(): void {
