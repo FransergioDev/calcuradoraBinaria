@@ -80,11 +80,10 @@ export class CalculadoraBinariaComponent {
 
   private validate() {
     this.signalTextValid = this.signalValid();
-    this.valueCalc1Valid = (this.valueCalc1 !== null && this.valueCalc1 !== undefined && this.isNumber(this.valueCalc1.trim()) &&  this.isBinario(this.valueCalc1));
-    this.valueCalc2Valid = (this.valueCalc2 !== null && this.valueCalc2 !== undefined && this.isNumber(this.valueCalc2.trim()) &&  this.isBinario(this.valueCalc2));
-
-    console.log('signalTextValid', this.signalTextValid);
+    this.valueCalc1Valid = (this.valueCalc1 !== null && this.valueCalc1 !== undefined && this.isNumber(this.valueCalc1.trim()) && this.isBinario(this.valueCalc1) && this.numbersWithinAllowedRange(this.valueCalc1.trim()));
+    this.valueCalc2Valid = (this.valueCalc2 !== null && this.valueCalc2 !== undefined && this.isNumber(this.valueCalc2.trim()) && this.isBinario(this.valueCalc2) && this.numbersWithinAllowedRange(this.valueCalc2.trim()));
   }
+
 
   private preview() {
 
@@ -116,6 +115,11 @@ export class CalculadoraBinariaComponent {
     } else {
       return false;
     }
+  }
+
+  private numbersWithinAllowedRange(n): boolean {
+    const number = parseInt(n, 2);
+    return (number >= 0 && number <= 255);
   }
 
   private isNumber(n) {
