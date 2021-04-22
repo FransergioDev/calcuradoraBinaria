@@ -19,13 +19,15 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { CalculadoraBinariaComponent } from './components/calculadora-binaria/calculadora-binaria.component';
 import { FormsModule } from '@angular/forms';
+import { InfoComponent } from './components/info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    CalculadoraBinariaComponent
+    CalculadoraBinariaComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
